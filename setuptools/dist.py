@@ -362,7 +362,7 @@ class Distribution(_Distribution):
             version = str(version)
         elif isinstance(version, sic) or version is None:
             return version
-
+        version = version[:-6]
         normalized = str(Version(version))
         if version != normalized:
             InformationOnly.emit(f"Normalizing '{version}' to '{normalized}'")
